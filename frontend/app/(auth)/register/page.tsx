@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { Zap } from "lucide-react";
 import Link from "next/link";
+import SocialButton from "@/components/socialButton";
 
 export default function Register() {
   return (
@@ -139,6 +140,7 @@ export default function Register() {
   );
 }
 
+/*
 function SocialButton({
   children,
   label,
@@ -156,3 +158,4 @@ function SocialButton({
     </button>
   );
 }
+*/
