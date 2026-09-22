@@ -1,30 +1,40 @@
+"use client";
+
 import type { ReactNode } from "react";
 import { Zap } from "lucide-react";
 import Link from "next/link";
 
-export default function Login() {
+export default function Register() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#e8e8e8] p-4 sm:p-8">
-
       <div className="grid w-full max-w-lg grid-cols-1 items-center gap-8 rounded-[0.5rem] bg-white p-6 sm:p-10 lg:grid-cols-1 lg:gap-12 lg:p-12">
         <div className="mx-auto w-full max-w-md">
-
           <div className="mb-8 flex items-center justify-center gap-2">
-
             {/* TODO: Add logo here */}
             <span className="flex size-7 items-center justify-center rounded-full bg-black text-white">
               <Zap className="size-3.5 fill-white" />
             </span>
-
             <span className="text-lg font-semibold tracking-tight">SMS-SYS</span>
-
           </div>
 
           <h1 className="mb-10 text-center text-4xl font-semibold tracking-tight">
-            Welcome back
+            Create an account
           </h1>
 
-          <form className="space-y-5">
+          <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+            <div className="space-y-2">
+              <label htmlFor="name" className="text-sm text-neutral-600">
+                Full name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                className="h-11 w-full rounded-full border border-neutral-200 px-4 text-sm outline-none placeholder:text-neutral-400 focus:border-neutral-400"
+              />
+            </div>
+
             <div className="space-y-2">
               <label htmlFor="email" className="text-sm text-neutral-600">
                 Email address
@@ -49,26 +59,33 @@ export default function Login() {
                 placeholder="Enter your password"
                 className="h-11 w-full rounded-full border border-neutral-200 px-4 text-sm outline-none placeholder:text-neutral-400 focus:border-neutral-400"
               />
-              <Link
-                href="#"
-                className="inline-block text-sm text-[#3b82f6] hover:underline"
-              >
-                Forgot password?
-              </Link>
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="confirmPassword" className="text-sm text-neutral-600">
+                Confirm password
+              </label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                className="h-11 w-full rounded-full border border-neutral-200 px-4 text-sm outline-none placeholder:text-neutral-400 focus:border-neutral-400"
+              />
             </div>
 
             <button
               type="submit"
               className="h-12 w-full rounded-full bg-black text-sm font-medium tracking-[0.25em] text-white"
             >
-              LOG IN
+              SIGN UP
             </button>
           </form>
 
           <p className="mt-6 text-center text-sm text-neutral-500">
-            Doesn&apos;t have an account?{" "}
-            <Link href="/register" className="text-[#3b82f6] hover:underline">
-              Signup
+            Already have an account?{" "}
+            <Link href="/login" className="text-[#3b82f6] hover:underline">
+              Login
             </Link>
           </p>
 
@@ -79,8 +96,6 @@ export default function Login() {
           </div>
 
           <div className="flex items-center justify-center gap-4">
-
-            {/*google login icon */}
             <SocialButton label="Google">
               <svg viewBox="0 0 24 24" className="size-5" aria-hidden="true">
                 <path
@@ -101,8 +116,6 @@ export default function Login() {
                 />
               </svg>
             </SocialButton>
-
-            {/*apple login icon */}
             <SocialButton label="Apple">
               <svg viewBox="0 0 24 24" className="size-5" aria-hidden="true">
                 <path
@@ -111,8 +124,6 @@ export default function Login() {
                 />
               </svg>
             </SocialButton>
-
-            {/*facebook login icon */}
             <SocialButton label="Facebook">
               <svg viewBox="0 0 24 24" className="size-5" aria-hidden="true">
                 <path
@@ -123,16 +134,6 @@ export default function Login() {
             </SocialButton>
           </div>
         </div>
-
-        {/* TODO: Add image here */}
-        {/* <div className="hidden h-full min-h-[520px] lg:block">
-          <img
-            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80"
-            alt="Login Image"
-            className="h-full w-full rounded-[1.5rem] object-cover"
-          />
-        </div> */}
-        
       </div>
     </main>
   );

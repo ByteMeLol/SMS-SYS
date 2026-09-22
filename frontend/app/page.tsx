@@ -4,10 +4,12 @@
  * @version 1.0.0
  */
 
-export default function Login() {
+import Login from "./(auth)/login/page";
+
+export default function Home() {
   return (
     <div>
-      <h1>Login</h1>
+      <Login/>
     </div>
   );
 }
