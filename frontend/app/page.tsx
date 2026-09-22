@@ -1,11 +1,13 @@
-import Image from "next/image";
+/**
+ * @file Login page
+ * @description Login page of the application
+ * @version 1.0.0
+ */
 
-export default function Home() {
+export default function Login() {
   return (
-    <>
     <div>
-      <h1>Hello World</h1>
+      <h1>Login</h1>
     </div>
-    </>
   );
 }
