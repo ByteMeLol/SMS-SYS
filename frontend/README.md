@@ -18,6 +18,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## Connecting to the school backend
+
+The dashboard, login, registration, and student-admission form use the Spring
+Boot API through the Next.js `/api` proxy. The proxy defaults to
+`http://localhost:8080`. To use a different backend URL, set
+`SCHOOL_SYSTEM_API_URL` in `.env.local`, then restart the Next.js dev server.
+
+Start the backend and frontend separately. Sign in with an administrator
+account to load student records, create admissions, and update enrollment
+statuses. The backend currently returns admission numbers and student IDs, but
+does not include student names in its student-list response.
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
